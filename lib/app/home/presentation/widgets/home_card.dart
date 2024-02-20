@@ -1,6 +1,3 @@
-import 'package:body_health/app/home/presentation/screens/body/models/gives_vit_model.dart';
-import 'package:body_health/app/home/presentation/screens/calories/models/calories_model.dart';
-import 'package:body_health/app/home/presentation/controller/home_cubit.dart';
 import 'package:body_health/app/home/presentation/screens/bmi/bmi_screen.dart';
 import 'package:body_health/app/home/presentation/screens/body/body_home_screen.dart';
 import 'package:body_health/app/home/presentation/screens/calories/calories.dart';
@@ -11,8 +8,12 @@ import 'package:body_health/core/utils/assets_path.dart';
 import 'package:body_health/core/utils/media_query_values.dart';
 import 'package:flutter/material.dart';
 
-HomeCard(HomeModel model, CaloriesData CaloriesData, int index,
-        BuildContext context) =>
+import '../screens/calories/models/calories_model.dart';
+import '../screens/exercise/exercise_screen.dart';
+import '../screens/exercise/models/exercises_model.dart';
+
+HomeCard(HomeModel model, CaloriesData caloriesData,
+        ExercisesData exercisesData, int index, BuildContext context) =>
     InkWell(
       onTap: () {
         if (model.id == 2) {
@@ -41,7 +42,16 @@ HomeCard(HomeModel model, CaloriesData CaloriesData, int index,
               context,
               MaterialPageRoute(
                 builder: (context) =>
-                    CaloriesScreen(caloriesDataModel: CaloriesData),
+                    CaloriesScreen(caloriesDataModel: caloriesData),
+                // CaloriesScreen(caloriesDataModel: caloriesData),
+              ));
+        }
+        if (model.id == 6) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    ExercisesScreen(exercisesDataModel: exercisesData),
               ));
         }
         if (model.id == 5) {

@@ -3,6 +3,7 @@ import 'package:body_health/app/home/presentation/screens/body/models/gives_vit_
 import 'package:body_health/app/home/presentation/screens/calories/models/calories_model.dart';
 import 'package:body_health/app/home/presentation/controller/home_cubit.dart';
 import 'package:body_health/app/home/presentation/controller/home_states.dart';
+import 'package:body_health/app/home/presentation/screens/exercise/models/exercises_model.dart';
 import 'package:body_health/app/home/presentation/widgets/home_card.dart';
 import 'package:body_health/app/home/presentation/widgets/mydrawer.dart';
 import 'package:body_health/app/localization/presentation/cubit/locale_cubit.dart';
@@ -75,6 +76,8 @@ class HomeScreen extends StatelessWidget {
           // var cubit = HomeCubit.get(context);
           CaloriesData? caloriesModel =
               HomeCubit.get(context).caloriesModel?.caloriesData;
+          ExercisesData? exercisesModel =
+              HomeCubit.get(context).exercisesModel?.exercisesData;
 
           return SingleChildScrollView(
             child: Column(
@@ -105,11 +108,12 @@ class HomeScreen extends StatelessWidget {
                 //       Icons.abc,
                 //       color: Colors.amber,
                 //     )),
+
                 // IconButton(
                 //     onPressed: () {
-                //       HomeCubit.get(context).uploadGivesEnergyData(
-                //         energyList: EnergyDataList,
-                //         gainWeightList: gainWeightList,
+                //       HomeCubit.get(context). uploadExerciseData(slimming: exersicesSlimmingDetailsList,
+                      
+                //         weight_stabilization: exersicesStablizationDetailsList,
                 //       );
                 //     },
                 //     icon: Icon(
@@ -145,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           int TouchIndex = HomeList[index].id;
                           return HomeCard(
-                              HomeList[index], caloriesModel!, index, context);
+                              HomeList[index], caloriesModel!,exercisesModel!, index, context);
                         },
                         itemCount: HomeList.length,
                         // itemCount: 3,
@@ -282,6 +286,63 @@ List<Map<String, dynamic>> NutsDataList = [
         "https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/walnuts%20639%20calories%20%D8%A7%D9%84%D9%83%D8%A7%D8%AC%D9%88%20%D9%A6%D9%A3%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=25269566-6094-4388-ab5d-3f784edd6c21",
   },
   // Add more items as needed
+];
+//////////////////////////////
+//// exersices//////
+List<Map<String, dynamic>> exersicesSlimmingDetailsList = [
+  {
+    'nameAr': 'تمارين الحبل ',
+    'nameEn': 'Rope Exercises ',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+  {
+    'nameAr': ' الجري ',
+    'nameEn': 'Running ',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+  {
+    'nameAr': 'تدريب الأوزان  ',
+    'nameEn': 'Weight Training ',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+  {
+    'nameAr': 'ركوب الدراجات',
+    'nameEn': 'Cycling ',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+ 
+];
+List<Map<String, dynamic>> exersicesStablizationDetailsList = [
+  {
+    'nameAr': ' تمرين شد البطن ',
+    'nameEn': 'Abdominal Stretching Exercise',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+  {
+    'nameAr': ' تمرين عضلات الأرداف وتقوية الركبة ',
+    'nameEn': 'Buttock Muscle Exercise and Knee Strengthening ',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+  {
+    'nameAr': 'تمرين تمديد القدم',
+    'nameEn': 'Foot Stretching Exercise',
+   
+    'photo':
+        'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
+  },
+  
 ];
 
 //  //  //  //  //  //  //  //

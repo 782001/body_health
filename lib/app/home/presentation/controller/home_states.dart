@@ -24,6 +24,15 @@ class GetCaloriesErrorState extends HomeStates {
 
   GetCaloriesErrorState(this.error);
 }
+class GetExercisesLoadingState extends HomeStates {}
+
+class GetExercisesSucssesState extends HomeStates {}
+
+class GetExercisesErrorState extends HomeStates {
+  final String error;
+
+  GetExercisesErrorState(this.error);
+}
 
 class GetBodyVitaLoadingState extends HomeStates {}
 

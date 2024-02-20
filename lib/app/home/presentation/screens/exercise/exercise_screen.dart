@@ -1,6 +1,6 @@
-import 'package:body_health/app/home/presentation/screens/calories/models/calories_model.dart';
 import 'package:body_health/app/home/presentation/controller/home_cubit.dart';
 import 'package:body_health/app/home/presentation/controller/home_states.dart';
+import 'package:body_health/app/home/presentation/screens/exercise/models/exercises_model.dart';
 import 'package:body_health/app/localization/presentation/cubit/locale_cubit.dart';
 import 'package:body_health/config/locale/app_localizations.dart';
 import 'package:body_health/core/utils/app_strings.dart';
@@ -8,12 +8,12 @@ import 'package:body_health/core/utils/assets_path.dart';
 import 'package:body_health/core/utils/media_query_values.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'calories_lists.dart';
 
-class CaloriesScreen extends StatelessWidget {
-  CaloriesScreen({Key? key,required this.caloriesDataModel}) : super(key: key);
-  final CaloriesData? caloriesDataModel;
+class ExercisesScreen extends StatelessWidget {
+  ExercisesScreen({Key? key,required this.exercisesDataModel}) : super(key: key);
+  final ExercisesData? exercisesDataModel;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit, HomeStates>(
@@ -47,7 +47,7 @@ class CaloriesScreen extends StatelessWidget {
                       // height: context.height * .861
                       child: Center(
                         child: Text(
-                          AppLocalizations.of(context)!.translate('fruit')!,
+                          AppLocalizations.of(context)!.translate('Slimming')!,
                           style: TextStyle(
                               fontFamily: CairoFont,
                               color: Colors.white,
@@ -83,16 +83,16 @@ class CaloriesScreen extends StatelessWidget {
                               mainAxisExtent: context.height * 0.2,
                             ),
                             itemBuilder: (BuildContext context, int index) {
-                              // int TouchIndex = FruitDetailsList[index].id;
-                              return FruitDetailsCard(
-                                  caloriesDataModel!.fruitModel![index],
+                              // int TouchIndex = SlimmingDetailsList[index].id;
+                              return SlimmingDetailsCard(
+                                  exercisesDataModel!.slimmingModel![index],
                                   index,
                                   context);
                             },
-                            itemCount: caloriesDataModel!.fruitModel!.length,
+                            itemCount: exercisesDataModel!.slimmingModel!.length,
                             // itemCount: 3,
-                            // children: List.generate(FruitDetailsList.length,
-                            //     (index) => HeroGridView(FruitDetailsList[index], context)),
+                            // children: List.generate(SlimmingDetailsList.length,
+                            //     (index) => HeroGridView(SlimmingDetailsList[index], context)),
                           ),
                         ),
                       ),
@@ -109,7 +109,7 @@ class CaloriesScreen extends StatelessWidget {
                       // height: context.height * .861
                       child: Center(
                         child: Text(
-                          AppLocalizations.of(context)!.translate('nuts')!,
+                          AppLocalizations.of(context)!.translate('Weight_stabilization')!,
                           style: TextStyle(
                               fontFamily: CairoFont,
                               color: Colors.white,
@@ -147,15 +147,15 @@ class CaloriesScreen extends StatelessWidget {
                               mainAxisExtent: context.height * 0.2,
                             ),
                             itemBuilder: (BuildContext context, int index) {
-                              return NutsDetailsCard(
-                                  caloriesDataModel!.nutsModel![index],
+                              return Weight_stabilizationDetailsCard(
+                                  exercisesDataModel!.weight_stabilizationModel![index],
                                   index,
                                   context);
                             },
-                            itemCount: caloriesDataModel!.nutsModel!.length,
+                            itemCount: exercisesDataModel!.weight_stabilizationModel!.length,
                             // itemCount: 3,
-                            // children: List.generate(FruitDetailsList.length,
-                            //     (index) => HeroGridView(FruitDetailsList[index], context)),
+                            // children: List.generate(SlimmingDetailsList.length,
+                            //     (index) => HeroGridView(SlimmingDetailsList[index], context)),
                           ),
                         ),
                       ),
@@ -184,48 +184,7 @@ class CaloriesScreen extends StatelessWidget {
                     // SizedBox(
                     //   height: context.height * .01,
                     // ),
-                    Center(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          color: Colors.white,
-                        ),
-                        width: context.width * 1,
-                        // height: context.height * .861,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: GridView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            // crossAxisCount: 3,
-                            // mainAxisSpacing: 1,
-                            // crossAxisSpacing: 1,
-                            // childAspectRatio: 1 / 1.7,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3,
-                              crossAxisSpacing: context.width * 0.01,
-                              mainAxisSpacing: context.width * 0.017,
-                              mainAxisExtent: context.height * 0.2,
-                            ),
-                            itemBuilder: (BuildContext context, int index) {
-                              return VegetablesDetailsCard(
-                                  caloriesDataModel!.vegetablesModel![index],
-                                  index,
-                                  context);
-                            },
-                            itemCount:
-                                caloriesDataModel!.vegetablesModel!.length,
-                            // itemCount: 3,
-                            // children: List.generate(FruitDetailsList.length,
-                            //     (index) => HeroGridView(FruitDetailsList[index], context)),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                 ],
                 ),
               ),
             ),
@@ -236,21 +195,21 @@ class CaloriesScreen extends StatelessWidget {
   }
 }
 
-// class FruitModel {
+// class SlimmingModel {
 //   final String image;
 
 //   final String title;
 
 //   final int id;
 // //   PageViewModel(this.image, this.title, );
-//   FruitModel({
+//   SlimmingModel({
 //     required this.image,
 //     required this.title,
 //     required this.id,
 //   });
 // }
 
-FruitDetailsCard(FruitModel model, int index, BuildContext context) =>
+SlimmingDetailsCard(SlimmingModel model, int index, BuildContext context) =>
     Container(
       // height: context.height * .15,
       // width: context.width * .85,
@@ -327,35 +286,36 @@ FruitDetailsCard(FruitModel model, int index, BuildContext context) =>
             ),
           ),
 
-          Center(
-            child: Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                // height: context.height * 0.08,
-                // width: context.width * .3,
-                child: Center(
-                  child: Text(
-                    BlocProvider.of<LocaleCubit>(context).currentLangCode ==
-                            AppStrings.englishCode
-                        ? model.caloriesEn!
-                        : model.caloriesAr!,
-                    style: TextStyle(
-                        fontFamily: CairoFont,
-                        color: Colors.blue.shade900,
-                        // fontSize: context.height * 0.017,
-                        fontSize: 14,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-          )
+          // Center(
+          //   child: Align(
+          //     alignment: Alignment.center,
+          //     child: SizedBox(
+          //       // height: context.height * 0.08,
+          //       // width: context.width * .3,
+          //       child: Center(
+          //         child: Text(
+          //           BlocProvider.of<LocaleCubit>(context).currentLangCode ==
+          //                   AppStrings.englishCode
+          //               ? model.ExercisesEn!
+          //               : model.ExercisesAr!,
+          //           style: TextStyle(
+          //               fontFamily: CairoFont,
+          //               color: Colors.blue.shade900,
+          //               // fontSize: context.height * 0.017,
+          //               fontSize: 14,
+          //               fontStyle: FontStyle.italic,
+          //               fontWeight: FontWeight.bold),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // )
+       
         ],
       ),
     );
 
-NutsDetailsCard(NutsModel model, int index, BuildContext context) => Container(
+Weight_stabilizationDetailsCard(Weight_stabilizationModel model, int index, BuildContext context) => Container(
       // height: context.height * .15,
       // width: context.width * .85,
       decoration: BoxDecoration(
@@ -431,135 +391,7 @@ NutsDetailsCard(NutsModel model, int index, BuildContext context) => Container(
             ),
           ),
 
-          Center(
-            child: Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                // height: context.height * 0.08,
-                // width: context.width * .3,
-                child: Center(
-                  child: Text(
-                    BlocProvider.of<LocaleCubit>(context).currentLangCode ==
-                            AppStrings.englishCode
-                        ? model.caloriesEn!
-                        : model.caloriesAr!,
-                    style: TextStyle(
-                        fontFamily: CairoFont,
-                        color: Colors.blue.shade900,
-                        // fontSize: context.height * 0.017,
-                        fontSize: 14,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
+       ],
       ),
     );
 
-VegetablesDetailsCard(VegetablesModel model, int index, BuildContext context) =>
-    Container(
-      // height: context.height * .15,
-      // width: context.width * .85,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.black.withOpacity(.2), width: 2),
-        color: Colors.white,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          // Container(
-          //   decoration: const BoxDecoration(
-          //     borderRadius: BorderRadius.only(
-          //         topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-          //   ),
-          //   child: Image.asset(
-          //     HeroIconModel.icon,
-          //     height: context.height * 0.2,
-          //     width: context.width * .7,
-          //     fit: BoxFit.fill,
-          //   ),
-          // ),
-          SizedBox(
-            height: context.height * .12,
-            width: context.width * .85,
-            child: Card(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                elevation: 4,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
-                ),
-                child: Image(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                      "${model.photo}",
-                    )
-                    // width: double.infinity,
-                    // fit: BoxFit.fill,
-                    )
-                // Image.asset(
-                //   HeroIconModel.image,
-                //   fit: BoxFit.cover,
-                // ),
-                ),
-          ),
-          SizedBox(
-            height: context.height * 0.013,
-          ),
-          Center(
-            child: Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                // height: context.height * 0.08,
-                // width: context.width * .3,
-                child: Center(
-                  child: Text(
-                    BlocProvider.of<LocaleCubit>(context).currentLangCode ==
-                            AppStrings.englishCode
-                        ? model.nameEn!
-                        : model.nameAr!,
-                    style: TextStyle(
-                        fontFamily: CairoFont,
-                        color: Colors.blue.shade900,
-                        // fontSize: context.height * 0.017,
-                        fontSize: 16,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          Center(
-            child: Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                // height: context.height * 0.08,
-                // width: context.width * .3,
-                child: Center(
-                  child: Text(
-                    BlocProvider.of<LocaleCubit>(context).currentLangCode ==
-                            AppStrings.englishCode
-                        ? model.caloriesEn!
-                        : model.caloriesAr!,
-                    style: TextStyle(
-                        fontFamily: CairoFont,
-                        color: Colors.blue.shade900,
-                        // fontSize: context.height * 0.017,
-                        fontSize: 14,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );

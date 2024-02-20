@@ -1,6 +1,7 @@
 import 'package:body_health/app/home/presentation/screens/body/models/gives_energy_weight_model.dart';
 import 'package:body_health/app/home/presentation/screens/body/models/gives_vit_model.dart';
 import 'package:body_health/app/home/presentation/screens/calories/models/calories_model.dart';
+import 'package:body_health/app/home/presentation/screens/exercise/models/exercises_model.dart';
 import 'package:body_health/app/home/presentation/screens/food_system/models/food_systems_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +30,33 @@ class HomeCubit extends Cubit<HomeStates> {
           .collection('calories')
           .doc('calories')
           .set({'Calories_data': CaloriesDataMap}).then((_) {
+        print(' uploading data: succses ');
+        emit(UploadCaloriesSuccessState());
+      }).catchError((error) {
+        print('Error uploading data: $error');
+        emit(UploadCaloriesErrorState(error.toString()));
+      });
+    } catch (error) {
+      emit(UploadCaloriesErrorState(error.toString()));
+    }
+  }
+  void uploadExerciseData({
+    List<Map<String, dynamic>>? slimming,
+    List<Map<String, dynamic>>? weight_stabilization,
+
+  }) {
+    emit(UploadCaloriesLoadingState());
+
+    Map<String, dynamic> ExerciseDataMap = {
+      'slimming': slimming,
+      'weight_stabilization': weight_stabilization,
+     
+    };
+    try {
+      FirebaseFirestore.instance
+          .collection('exercise')
+          .doc('exercise')
+          .set({'exercise_data': ExerciseDataMap}).then((_) {
         print(' uploading data: succses ');
         emit(UploadCaloriesSuccessState());
       }).catchError((error) {
@@ -147,6 +175,33 @@ class HomeCubit extends Cubit<HomeStates> {
       print(
           'erooorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr${error.toString()}');
       emit(GetCaloriesErrorState(error.toString()));
+    });
+  }
+  ExercisesModel? exercisesModel;
+
+  void GetExercisesData() {
+    emit(GetExercisesLoadingState());
+    FirebaseFirestore.instance
+        .collection('exercise')
+        .doc('exercise')
+        .get()
+        .then((value) {
+      exercisesModel = ExercisesModel.fromJson(value.data()!);
+      print('dataaaaaaaaaaaaaaaaaaaaaaaaaaaaa${value.data()}');
+      // print('dataaaaaaaaaaaaaaaaaaaaaaaaaaaaa${westModel!.data!.photo}');
+
+      print(
+          'dataaaaaaaaaaaaaaaaaaaaaaaaaaaaa${caloriesModel!.caloriesData?.nutsModel}');
+      // print(
+      //     'dataaaaaaaaaaaaaaaaaaaaaaaaaaaaa${CaloriesModel!.CaloriesData!.procedures}');
+      // print(
+      //     'dataaaaaaaaaaaaaaaaaaaaaaaaaaaaa${CaloriesModel!.CaloriesData!.symptoms[0]}');
+
+      emit(GetExercisesSucssesState());
+    }).catchError((error) {
+      print(
+          'erooorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr${error.toString()}');
+      emit(GetExercisesErrorState(error.toString()));
     });
   }
 
