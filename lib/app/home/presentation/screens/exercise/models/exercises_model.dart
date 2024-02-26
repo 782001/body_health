@@ -37,10 +37,10 @@ class SlimmingModel {
   String? photo;
 
   SlimmingModel.fromJson(Map<String, dynamic> json) {
-    nameAr = json['nameAr'];
-    nameEn = json['nameEn'];
+    nameAr = json['nameAr']??"";
+    nameEn = json['nameEn']??"";
 
-    photo = json['photo'];
+    photo = json['photo']??"";
   }
 }
 
@@ -52,10 +52,10 @@ class Weight_stabilizationModel {
   String? photo;
 
   Weight_stabilizationModel.fromJson(Map<String, dynamic> json) {
-    nameAr = json['nameAr'];
-    nameEn = json['nameEn'];
+    nameAr = json['nameAr']??"";
+    nameEn = json['nameEn']??"";
    
-    photo = json['photo'];
+    photo = json['photo']??"";
   }
 }
 

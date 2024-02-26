@@ -57,39 +57,73 @@ class DayScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     // a conditional expression to display one of the variables based on id
-                    daysModel.id == 1
-                        ? BlocProvider.of<LocaleCubit>(context)
-                                    .currentLangCode ==
-                                AppStrings.englishCode
-                            ? foodSystemsListModel
-                                    .foodSystemsListModel![0].Day1BreakfastEn ??
-                                ""
-                            : foodSystemsListModel
-                                    .foodSystemsListModel![0].Day1BreakfastAr ??
-                                ""
-                        : daysModel.id == 2
+                    customModel.id == 1
+                        ? daysModel.id == 1
                             ? BlocProvider.of<LocaleCubit>(context)
                                         .currentLangCode ==
                                     AppStrings.englishCode
-                                ? foodSystemsListModel.foodSystemsListModel![1]
-                                        .Day2BreakfastEn ??
+                                ? foodSystemsListModel.foodSystemsListModel![0]
+                                        .Day1BreakfastEn ??
                                     ""
-                                : foodSystemsListModel.foodSystemsListModel![1]
-                                        .Day2BreakfastAr ??
+                                : foodSystemsListModel.foodSystemsListModel![0]
+                                        .Day1BreakfastAr ??
                                     ""
-                            : daysModel.id == 3
+                            : daysModel.id == 2
                                 ? BlocProvider.of<LocaleCubit>(context)
                                             .currentLangCode ==
                                         AppStrings.englishCode
                                     ? foodSystemsListModel
-                                            .foodSystemsListModel![2]
-                                            .Day3BreakfastEn ??
+                                            .foodSystemsListModel![0]
+                                            .Day2BreakfastEn ??
                                         ""
                                     : foodSystemsListModel
-                                            .foodSystemsListModel![2]
-                                            .Day3BreakfastAr ??
+                                            .foodSystemsListModel![0]
+                                            .Day2BreakfastAr ??
                                         ""
-                                : '',
+                                : daysModel.id == 3
+                                    ? BlocProvider.of<LocaleCubit>(context)
+                                                .currentLangCode ==
+                                            AppStrings.englishCode
+                                        ? foodSystemsListModel
+                                                .foodSystemsListModel![0]
+                                                .Day3BreakfastEn ??
+                                            ""
+                                        : foodSystemsListModel
+                                                .foodSystemsListModel![0]
+                                                .Day3BreakfastAr ??
+                                            ""
+                                    : ''
+                        : customModel.id == 2
+                            ? daysModel.id == 1
+                                ? BlocProvider.of<LocaleCubit>(context)
+                                            .currentLangCode ==
+                                        AppStrings.englishCode
+                                    ? foodSystemsListModel.foodSystemsListModel![1].Day1BreakfastEn ?? ""
+                                    : foodSystemsListModel.foodSystemsListModel![1].Day1BreakfastAr ?? ""
+                                : daysModel.id == 2
+                                    ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                        ? foodSystemsListModel.foodSystemsListModel![1].Day2BreakfastEn ?? ""
+                                        : foodSystemsListModel.foodSystemsListModel![1].Day2BreakfastAr ?? ""
+                                    : daysModel.id == 3
+                                        ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                            ? foodSystemsListModel.foodSystemsListModel![1].Day3BreakfastEn ?? ""
+                                            : foodSystemsListModel.foodSystemsListModel![1].Day3BreakfastAr ?? ""
+                                        : ''
+                            : customModel.id == 3
+                                ? daysModel.id == 1
+                                    ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                        ? foodSystemsListModel.foodSystemsListModel![2].Day1BreakfastEn ?? ""
+                                        : foodSystemsListModel.foodSystemsListModel![2].Day1BreakfastAr ?? ""
+                                    : daysModel.id == 2
+                                        ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                            ? foodSystemsListModel.foodSystemsListModel![2].Day2BreakfastEn ?? ""
+                                            : foodSystemsListModel.foodSystemsListModel![2].Day2BreakfastAr ?? ""
+                                        : daysModel.id == 3
+                                            ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                                ? foodSystemsListModel.foodSystemsListModel![2].Day3BreakfastEn ?? ""
+                                                : foodSystemsListModel.foodSystemsListModel![2].Day3BreakfastAr ?? ""
+                                            : ''
+                                : "",
                     style: const TextStyle(
                       fontFamily: CairoFont,
                       color: Colors.black,
@@ -120,39 +154,75 @@ class DayScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     // a conditional expression to display one of the variables based on id
-                    daysModel.id == 1
-                        ? BlocProvider.of<LocaleCubit>(context)
-                                    .currentLangCode ==
-                                AppStrings.englishCode
-                            ? foodSystemsListModel
-                                    .foodSystemsListModel![0].Day1LunchEn ??
-                                ""
-                            : foodSystemsListModel
-                                    .foodSystemsListModel![0].Day1LunchAr ??
-                                ""
-                        : daysModel.id == 2
-                            ? BlocProvider.of<LocaleCubit>(context)
-                                        .currentLangCode ==
+                    customModel.id == 1
+                        ? daysModel.id == 1
+                            ? BlocProvider.of<LocaleCubit>(context).currentLangCode ==
                                     AppStrings.englishCode
-                                ? foodSystemsListModel
-                                        .foodSystemsListModel![1].Day2LunchEn ??
+                                ? foodSystemsListModel.foodSystemsListModel![0].Day1LunchEn ??
                                     ""
-                                : foodSystemsListModel
-                                        .foodSystemsListModel![1].Day2LunchAr ??
+                                : foodSystemsListModel.foodSystemsListModel![0].Day1LunchAr ??
                                     ""
-                            : daysModel.id == 3
-                                ? BlocProvider.of<LocaleCubit>(context)
-                                            .currentLangCode ==
+                            : daysModel.id == 2
+                                ? BlocProvider.of<LocaleCubit>(context).currentLangCode ==
                                         AppStrings.englishCode
                                     ? foodSystemsListModel
-                                            .foodSystemsListModel![2]
-                                            .Day3LunchEn ??
+                                            .foodSystemsListModel![0]
+                                            .Day2LunchEn ??
                                         ""
                                     : foodSystemsListModel
-                                            .foodSystemsListModel![2]
-                                            .Day3LunchAr ??
+                                            .foodSystemsListModel![0]
+                                            .Day2LunchAr ??
                                         ""
-                                : '',
+                                : daysModel.id == 3
+                                    ? BlocProvider.of<LocaleCubit>(context).currentLangCode ==
+                                            AppStrings.englishCode
+                                        ? foodSystemsListModel
+                                                .foodSystemsListModel![0]
+                                                .Day3LunchEn ??
+                                            ""
+                                        : foodSystemsListModel
+                                                .foodSystemsListModel![0]
+                                                .Day3LunchAr ??
+                                            ""
+                                    : ''
+                        : customModel.id == 2
+                            ? daysModel.id == 1
+                                ? BlocProvider.of<LocaleCubit>(context).currentLangCode ==
+                                        AppStrings.englishCode
+                                    ? foodSystemsListModel
+                                            .foodSystemsListModel![1]
+                                            .Day1LunchEn ??
+                                        ""
+                                    : foodSystemsListModel
+                                            .foodSystemsListModel![1]
+                                            .Day1LunchAr ??
+                                        ""
+                                : daysModel.id == 2
+                                    ? BlocProvider.of<LocaleCubit>(context)
+                                                .currentLangCode ==
+                                            AppStrings.englishCode
+                                        ? foodSystemsListModel.foodSystemsListModel![1].Day2LunchEn ?? ""
+                                        : foodSystemsListModel.foodSystemsListModel![1].Day2LunchAr ?? ""
+                                    : daysModel.id == 3
+                                        ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                            ? foodSystemsListModel.foodSystemsListModel![1].Day3LunchEn ?? ""
+                                            : foodSystemsListModel.foodSystemsListModel![1].Day3LunchAr ?? ""
+                                        : ''
+                            : customModel.id == 3
+                                ? daysModel.id == 1
+                                    ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                        ? foodSystemsListModel.foodSystemsListModel![2].Day1LunchEn ?? ""
+                                        : foodSystemsListModel.foodSystemsListModel![2].Day1LunchAr ?? ""
+                                    : daysModel.id == 2
+                                        ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                            ? foodSystemsListModel.foodSystemsListModel![2].Day2LunchEn ?? ""
+                                            : foodSystemsListModel.foodSystemsListModel![2].Day2LunchAr ?? ""
+                                        : daysModel.id == 3
+                                            ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                                ? foodSystemsListModel.foodSystemsListModel![2].Day3LunchEn ?? ""
+                                                : foodSystemsListModel.foodSystemsListModel![2].Day3LunchAr ?? ""
+                                            : ''
+                                : "",
                     style: const TextStyle(
                       fontFamily: CairoFont,
                       color: Colors.black,
@@ -182,39 +252,71 @@ class DayScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     // a conditional expression to display one of the variables based on id
-                    daysModel.id == 1
-                        ? BlocProvider.of<LocaleCubit>(context)
-                                    .currentLangCode ==
-                                AppStrings.englishCode
-                            ? foodSystemsListModel
-                                    .foodSystemsListModel![0].Day1DinnerEn ??
-                                ""
-                            : foodSystemsListModel
-                                    .foodSystemsListModel![0].Day1DinnerAr ??
-                                ""
-                        : daysModel.id == 2
-                            ? BlocProvider.of<LocaleCubit>(context)
-                                        .currentLangCode ==
+                    customModel.id == 1
+                        ? daysModel.id == 1
+                            ? BlocProvider.of<LocaleCubit>(context).currentLangCode ==
                                     AppStrings.englishCode
-                                ? foodSystemsListModel.foodSystemsListModel![1]
-                                        .Day2DinnerEn ??
+                                ? foodSystemsListModel.foodSystemsListModel![0]
+                                        .Day1DinnerEn ??
                                     ""
-                                : foodSystemsListModel.foodSystemsListModel![1]
-                                        .Day2DinnerAr ??
+                                : foodSystemsListModel.foodSystemsListModel![0]
+                                        .Day1DinnerAr ??
                                     ""
-                            : daysModel.id == 3
+                            : daysModel.id == 2
+                                ? BlocProvider.of<LocaleCubit>(context).currentLangCode ==
+                                        AppStrings.englishCode
+                                    ? foodSystemsListModel
+                                            .foodSystemsListModel![0]
+                                            .Day2DinnerEn ??
+                                        ""
+                                    : foodSystemsListModel
+                                            .foodSystemsListModel![0]
+                                            .Day2DinnerAr ??
+                                        ""
+                                : daysModel.id == 3
+                                    ? BlocProvider.of<LocaleCubit>(context)
+                                                .currentLangCode ==
+                                            AppStrings.englishCode
+                                        ? foodSystemsListModel
+                                                .foodSystemsListModel![0]
+                                                .Day3DinnerEn ??
+                                            ""
+                                        : foodSystemsListModel
+                                                .foodSystemsListModel![0]
+                                                .Day3DinnerAr ??
+                                            ""
+                                    : ''
+                        : customModel.id == 2
+                            ? daysModel.id == 1
                                 ? BlocProvider.of<LocaleCubit>(context)
                                             .currentLangCode ==
                                         AppStrings.englishCode
-                                    ? foodSystemsListModel
-                                            .foodSystemsListModel![2]
-                                            .Day3DinnerEn ??
-                                        ""
-                                    : foodSystemsListModel
-                                            .foodSystemsListModel![2]
-                                            .Day3DinnerAr ??
-                                        ""
-                                : '',
+                                    ? foodSystemsListModel.foodSystemsListModel![1].Day1DinnerEn ?? ""
+                                    : foodSystemsListModel.foodSystemsListModel![1].Day1DinnerAr ?? ""
+                                : daysModel.id == 2
+                                    ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                        ? foodSystemsListModel.foodSystemsListModel![1].Day2DinnerEn ?? ""
+                                        : foodSystemsListModel.foodSystemsListModel![1].Day2DinnerAr ?? ""
+                                    : daysModel.id == 3
+                                        ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                            ? foodSystemsListModel.foodSystemsListModel![1].Day3DinnerEn ?? ""
+                                            : foodSystemsListModel.foodSystemsListModel![1].Day3DinnerAr ?? ""
+                                        : ''
+                            : customModel.id == 3
+                                ? daysModel.id == 1
+                                    ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                        ? foodSystemsListModel.foodSystemsListModel![2].Day1DinnerEn ?? ""
+                                        : foodSystemsListModel.foodSystemsListModel![2].Day1DinnerAr ?? ""
+                                    : daysModel.id == 2
+                                        ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                            ? foodSystemsListModel.foodSystemsListModel![2].Day2DinnerEn ?? ""
+                                            : foodSystemsListModel.foodSystemsListModel![2].Day2DinnerAr ?? ""
+                                        : daysModel.id == 3
+                                            ? BlocProvider.of<LocaleCubit>(context).currentLangCode == AppStrings.englishCode
+                                                ? foodSystemsListModel.foodSystemsListModel![2].Day3DinnerEn ?? ""
+                                                : foodSystemsListModel.foodSystemsListModel![2].Day3DinnerAr ?? ""
+                                            : ''
+                                : "",
                     style: const TextStyle(
                       fontFamily: CairoFont,
                       color: Colors.black,

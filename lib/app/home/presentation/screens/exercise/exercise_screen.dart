@@ -10,9 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-
 class ExercisesScreen extends StatelessWidget {
-  ExercisesScreen({Key? key,required this.exercisesDataModel}) : super(key: key);
+  ExercisesScreen({Key? key, required this.exercisesDataModel})
+      : super(key: key);
   final ExercisesData? exercisesDataModel;
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,8 @@ class ExercisesScreen extends StatelessWidget {
                                   index,
                                   context);
                             },
-                            itemCount: exercisesDataModel!.slimmingModel!.length,
+                            itemCount:
+                                exercisesDataModel!.slimmingModel!.length,
                             // itemCount: 3,
                             // children: List.generate(SlimmingDetailsList.length,
                             //     (index) => HeroGridView(SlimmingDetailsList[index], context)),
@@ -109,7 +110,8 @@ class ExercisesScreen extends StatelessWidget {
                       // height: context.height * .861
                       child: Center(
                         child: Text(
-                          AppLocalizations.of(context)!.translate('Weight_stabilization')!,
+                          AppLocalizations.of(context)!
+                              .translate('Weight_stabilization')!,
                           style: TextStyle(
                               fontFamily: CairoFont,
                               color: Colors.white,
@@ -144,15 +146,17 @@ class ExercisesScreen extends StatelessWidget {
                               crossAxisCount: 3,
                               crossAxisSpacing: context.width * 0.01,
                               mainAxisSpacing: context.width * 0.017,
-                              mainAxisExtent: context.height * 0.2,
+                              mainAxisExtent: context.height * 0.3,
                             ),
                             itemBuilder: (BuildContext context, int index) {
                               return Weight_stabilizationDetailsCard(
-                                  exercisesDataModel!.weight_stabilizationModel![index],
+                                  exercisesDataModel!
+                                      .weight_stabilizationModel![index],
                                   index,
                                   context);
                             },
-                            itemCount: exercisesDataModel!.weight_stabilizationModel!.length,
+                            itemCount: exercisesDataModel!
+                                .weight_stabilizationModel!.length,
                             // itemCount: 3,
                             // children: List.generate(SlimmingDetailsList.length,
                             //     (index) => HeroGridView(SlimmingDetailsList[index], context)),
@@ -161,30 +165,10 @@ class ExercisesScreen extends StatelessWidget {
                       ),
                     ),
 
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        color: Colors.blue.shade900,
-                      ),
-                      width: context.width * 1,
-                      // height: context.height * .861
-                      child: Center(
-                        child: Text(
-                          AppLocalizations.of(context)!
-                              .translate('vegetabels')!,
-                          style: TextStyle(
-                              fontFamily: CairoFont,
-                              color: Colors.white,
-                              fontSize: 20),
-                        ),
-                      ),
-                    ),
                     // SizedBox(
                     //   height: context.height * .01,
                     // ),
-                 ],
+                  ],
                 ),
               ),
             ),
@@ -237,6 +221,7 @@ SlimmingDetailsCard(SlimmingModel model, int index, BuildContext context) =>
             height: context.height * .12,
             width: context.width * .85,
             child: Card(
+                color: Colors.white,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 4,
                 shape: const RoundedRectangleBorder(
@@ -273,6 +258,7 @@ SlimmingDetailsCard(SlimmingModel model, int index, BuildContext context) =>
                             AppStrings.englishCode
                         ? model.nameEn!
                         : model.nameAr!,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: CairoFont,
                         color: Colors.blue.shade900,
@@ -310,12 +296,13 @@ SlimmingDetailsCard(SlimmingModel model, int index, BuildContext context) =>
           //     ),
           //   ),
           // )
-       
         ],
       ),
     );
 
-Weight_stabilizationDetailsCard(Weight_stabilizationModel model, int index, BuildContext context) => Container(
+Weight_stabilizationDetailsCard(
+        Weight_stabilizationModel model, int index, BuildContext context) =>
+    Container(
       // height: context.height * .15,
       // width: context.width * .85,
       decoration: BoxDecoration(
@@ -344,6 +331,7 @@ Weight_stabilizationDetailsCard(Weight_stabilizationModel model, int index, Buil
             child: Card(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 4,
+                color: Colors.white,
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(10),
@@ -378,6 +366,7 @@ Weight_stabilizationDetailsCard(Weight_stabilizationModel model, int index, Buil
                             AppStrings.englishCode
                         ? model.nameEn!
                         : model.nameAr!,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: CairoFont,
                         color: Colors.blue.shade900,
@@ -390,8 +379,6 @@ Weight_stabilizationDetailsCard(Weight_stabilizationModel model, int index, Buil
               ),
             ),
           ),
-
-       ],
+        ],
       ),
     );
-

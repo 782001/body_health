@@ -20,63 +20,63 @@ class FoodSystems extends StatelessWidget {
         image: fatMan,
         title: "Food system for",
         id: 1,
-        day1Breakfast: "Green Power \n1 Hard-boiled egg",
-        day1Lunch:
-            "Chicken\nWhite Bean Sup\n 1 Whole Wheat baguette\n 1 apple ,medium",
-        day1Dinner: "Slow Cooker \nChicken curry \n 1 Cup brown rice,cooked",
-        day2Breakfast: "Vanilla Fresh \n Toast Bake \n 1 cup fresh Berries",
-        day2Lunch: "Slow Cooker \nChicken curry \n1 medium orange ",
-        day2Dinner: "Superfood \n Quinoa Bowl\n 1 cup steamed asparagus",
-        day3Breakfast: "Overnight  \nOatmeal",
-        day3Lunch:
-            "SunShine Slad w/\n Orange \n Marmalade\n Vinaigrette\n15 Carrots& 1 Tbsp . hummus",
-        day3Dinner:
-            "Southwestern\n Quinoa Stuffed peppers\n 1 Cup Roasted Parmesan Green Beans",
+        // day1Breakfast: "Green Power \n1 Hard-boiled egg",
+        // day1Lunch:
+        //     "Chicken\nWhite Bean Sup\n 1 Whole Wheat baguette\n 1 apple ,medium",
+        // day1Dinner: "Slow Cooker \nChicken curry \n 1 Cup brown rice,cooked",
+        // day2Breakfast: "Vanilla Fresh \n Toast Bake \n 1 cup fresh Berries",
+        // day2Lunch: "Slow Cooker \nChicken curry \n1 medium orange ",
+        // day2Dinner: "Superfood \n Quinoa Bowl\n 1 cup steamed asparagus",
+        // day3Breakfast: "Overnight  \nOatmeal",
+        // day3Lunch:
+        //     "SunShine Slad w/\n Orange \n Marmalade\n Vinaigrette\n15 Carrots& 1 Tbsp . hummus",
+        // day3Dinner:
+        //     "Southwestern\n Quinoa Stuffed peppers\n 1 Cup Roasted Parmesan Green Beans",
       ),
       FoodSystemsModel(
         discreption: AppLocalizations.of(context)!.translate("Underweight")!,
         image: WeakMan,
         title: "Food system for",
         id: 2,
-        day1Breakfast:
-            "Ham & cheese omlet prepared in 1 Tbs olive oil  \n(2 eggs , 1oz ,ham ,1/4 cheese)\n Cranberry juice (1c)\n 413 cal,18gm pro",
-        day1Lunch:
-            "Barbeque (2 Tbs ) chicken (3.5 oz)\npotato salad (1/2 c)\n Fruit (1/2 c)\n Whole milk(1 c)\n 587 cal , 32 gm pro",
-        day1Dinner:
-            "Spaghetti with meatballs (1-1.5 c) \nGarlic bread (1 slice) \nFruit (1/2 c)\n Whole milk (1 c)\n 615 cal, 26 gm pro",
-        day2Breakfast:
-            "Waffles (1) with butter (1 Tbs) & syrup (2 Tob)\n Greek yogurt with fruit (1 single serve container)\n Whole milk (1c)\n 664 cal, 22 gm pro",
-        day2Lunch:
-            "Ham salad sandwich (1/2 c on 2 pc bread)\n Edamame (1/2 c)\n Whole milk (1c)\n 710 cal, 35 gm pro ",
-        day2Dinner:
-            "Lasagna (1/2 c)\n Roll (1) with butter (1 Tbs) \nWhole milk (1c)\n 608 cal, 24 gm pro",
-        day3Breakfast:
-            "Scrambled eggs (1 large)\n Toast (1 slice) with butter (1 Tbs) & Jelly (1 Tbs).\n Fruit juice (1/2 c) 284 cal, 10 gm pro",
-        day3Lunch:
-            "Cheeseburger with bun (1 sand)\n Fries (1 small serving)\n Chocolate milk shake (1c)\n 1031 cal, 40 gm pro",
-        day3Dinner:
-            "Salmon (1 sm fillet) prepared in butter (1 Tbs)\n Rice (1/2 c)\n Broccoli (1/2 c)\n Whole milk (1c)\n 595 cal, 55 gm pro",
+        // day1Breakfast:
+        //     "Ham & cheese omlet prepared in 1 Tbs olive oil  \n(2 eggs , 1oz ,ham ,1/4 cheese)\n Cranberry juice (1c)\n 413 cal,18gm pro",
+        // day1Lunch:
+        //     "Barbeque (2 Tbs ) chicken (3.5 oz)\npotato salad (1/2 c)\n Fruit (1/2 c)\n Whole milk(1 c)\n 587 cal , 32 gm pro",
+        // day1Dinner:
+        //     "Spaghetti with meatballs (1-1.5 c) \nGarlic bread (1 slice) \nFruit (1/2 c)\n Whole milk (1 c)\n 615 cal, 26 gm pro",
+        // day2Breakfast:
+        //     "Waffles (1) with butter (1 Tbs) & syrup (2 Tob)\n Greek yogurt with fruit (1 single serve container)\n Whole milk (1c)\n 664 cal, 22 gm pro",
+        // day2Lunch:
+        //     "Ham salad sandwich (1/2 c on 2 pc bread)\n Edamame (1/2 c)\n Whole milk (1c)\n 710 cal, 35 gm pro ",
+        // day2Dinner:
+        //     "Lasagna (1/2 c)\n Roll (1) with butter (1 Tbs) \nWhole milk (1c)\n 608 cal, 24 gm pro",
+        // day3Breakfast:
+        //     "Scrambled eggs (1 large)\n Toast (1 slice) with butter (1 Tbs) & Jelly (1 Tbs).\n Fruit juice (1/2 c) 284 cal, 10 gm pro",
+        // day3Lunch:
+        //     "Cheeseburger with bun (1 sand)\n Fries (1 small serving)\n Chocolate milk shake (1c)\n 1031 cal, 40 gm pro",
+        // day3Dinner:
+        //     "Salmon (1 sm fillet) prepared in butter (1 Tbs)\n Rice (1/2 c)\n Broccoli (1/2 c)\n Whole milk (1c)\n 595 cal, 55 gm pro",
       ),
       FoodSystemsModel(
         discreption: AppLocalizations.of(context)!.translate("Normal")!,
         image: normal_man,
         title: "Food system for",
         id: 3,
-        day1Breakfast: "1 bowl of poha or daliya with vegetable",
-        day1Lunch:
-            "1-2 chapatis,\n 1 small bowl of dal,\n 1 small bowl of sabzi \n(carrot-caulifower- peas) and 1 bowl of curd",
-        day1Dinner:
-            "1-2 chapatis,\n 1 small bowl of dal and 1 small bowl of sabzi (palak paneer)",
-        day2Breakfast: "Oats porridge (with skimmed milk) and fruits",
-        day2Lunch:
-            "1 chapati, \n1 small bowl of methi dal,\n 1/2 small bowl rice, \n1 small bowl of sabzi (okra),\n and 1 bowl of vegetable salad",
-        day2Dinner:
-            "1-2 chapatis,  \n1 small bowl of dal  \nand 1 small bowl of sabzi (bottle gourd)",
-        day3Breakfast: "2 brown rice idlis with sambhar",
-        day3Lunch:
-            "1 bajra roti.\n 1 small bowl of dal\n 1 small bowl of sabzi (brinjal) \nand 1 bowl of vegetable salad",
-        day3Dinner:
-            "Mixed vegetable salad topped with nuts, and grilled low-fat paneer",
+        // day1Breakfast: "1 bowl of poha or daliya with vegetable",
+        // day1Lunch:
+        //     "1-2 chapatis,\n 1 small bowl of dal,\n 1 small bowl of sabzi \n(carrot-caulifower- peas) and 1 bowl of curd",
+        // day1Dinner:
+        //     "1-2 chapatis,\n 1 small bowl of dal and 1 small bowl of sabzi (palak paneer)",
+        // day2Breakfast: "Oats porridge (with skimmed milk) and fruits",
+        // day2Lunch:
+        //     "1 chapati, \n1 small bowl of methi dal,\n 1/2 small bowl rice, \n1 small bowl of sabzi (okra),\n and 1 bowl of vegetable salad",
+        // day2Dinner:
+        //     "1-2 chapatis,  \n1 small bowl of dal  \nand 1 small bowl of sabzi (bottle gourd)",
+        // day3Breakfast: "2 brown rice idlis with sambhar",
+        // day3Lunch:
+        //     "1 bajra roti.\n 1 small bowl of dal\n 1 small bowl of sabzi (brinjal) \nand 1 bowl of vegetable salad",
+        // day3Dinner:
+        //     "Mixed vegetable salad topped with nuts, and grilled low-fat paneer",
       ),
     ];
 
@@ -105,14 +105,16 @@ class FoodSystems extends StatelessWidget {
                 height: 20,
               ),
               SizedBox(
-                height: context.height * .8,
+                height: context.height * .9,
                 width: double.infinity,
                 child: ListView.separated(
                     // scrollDirection: Axis.horizontal,
+
+                    physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => FoodSystemsCard(
                         FoodSystemsList[index], foodSystemsListData!, context),
                     separatorBuilder: (context, index) => SizedBox(
-                          height: context.height * 0.01,
+                          height: context.height * 0.02,
                         ),
                     itemCount: FoodSystemsList.length),
               ),
@@ -161,7 +163,7 @@ Widget FoodSystemsCard(FoodSystemsModel custommodel,
                     Image(
                       image: AssetImage(custommodel.image),
                       width: context.width * .2,
-                      height: context.height * .16,
+                      height: context.height * .19,
                     ),
                     const Spacer(),
                     SizedBox(
@@ -311,29 +313,29 @@ class FoodSystemsModel {
   final String title;
   final String discreption;
   final int id;
-  final String day1Breakfast;
-  final String day1Lunch;
-  final String day1Dinner;
-  final String day2Breakfast;
-  final String day2Lunch;
-  final String day2Dinner;
-  final String day3Breakfast;
-  final String day3Lunch;
-  final String day3Dinner;
+  // final String day1Breakfast;
+  // final String day1Lunch;
+  // final String day1Dinner;
+  // final String day2Breakfast;
+  // final String day2Lunch;
+  // final String day2Dinner;
+  // final String day3Breakfast;
+  // final String day3Lunch;
+  // final String day3Dinner;
 //   PageViewModel(this.image, this.title, );
   FoodSystemsModel({
     required this.image,
     required this.title,
     required this.discreption,
     required this.id,
-    required this.day1Breakfast,
-    required this.day1Lunch,
-    required this.day1Dinner,
-    required this.day2Breakfast,
-    required this.day2Lunch,
-    required this.day2Dinner,
-    required this.day3Breakfast,
-    required this.day3Lunch,
-    required this.day3Dinner,
+    // required this.day1Breakfast,
+    // required this.day1Lunch,
+    // required this.day1Dinner,
+    // required this.day2Breakfast,
+    // required this.day2Lunch,
+    // required this.day2Dinner,
+    // required this.day3Breakfast,
+    // required this.day3Lunch,
+    // required this.day3Dinner,
   });
 }

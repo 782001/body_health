@@ -82,7 +82,7 @@
   "male":"ذكر",
   "female":"انثي",
   "hight":"الطول",
-  "cm":"سنتي",
+  "cm":"سم",
   "weight":"الوزن",
   "age":"العمر",
   "calculate":"احسب",
@@ -112,6 +112,8 @@
   "dinner": "العشاء",
   "chatGpt": "Chat GPT",
   "exercises": "التمارين",
+  "Slimming": "التخسيس",
+  "Weight_stabilization": "تثبيت الوزن",
 
   
   "maps":"الخريطه"

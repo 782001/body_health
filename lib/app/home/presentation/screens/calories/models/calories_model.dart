@@ -43,11 +43,11 @@ class FruitModel {
   String? photo;
 
   FruitModel.fromJson(Map<String, dynamic> json) {
-    nameAr = json['nameAr'];
-    nameEn = json['nameEn'];
-    caloriesAr = json['caloriesAr'];
-    caloriesEn = json['caloriesEn'];
-    photo = json['photo'];
+    nameAr = json['nameAr'] ?? "";
+    nameEn = json['nameEn'] ?? "";
+    caloriesAr = json['caloriesAr'] ?? "";
+    caloriesEn = json['caloriesEn'] ?? "";
+    photo = json['photo'] ?? "";
   }
 }
 
@@ -59,11 +59,11 @@ class NutsModel {
   String? photo;
 
   NutsModel.fromJson(Map<String, dynamic> json) {
-    nameAr = json['nameAr'];
-    nameEn = json['nameEn'];
-    caloriesAr = json['caloriesAr'];
-    caloriesEn = json['caloriesEn'];
-    photo = json['photo'];
+    nameAr = json['nameAr'] ?? "";
+    nameEn = json['nameEn'] ?? "";
+    caloriesAr = json['caloriesAr'] ?? "";
+    caloriesEn = json['caloriesEn'] ?? "";
+    photo = json['photo'] ?? "";
   }
 }
 
@@ -75,10 +75,10 @@ class VegetablesModel {
   String? photo;
 
   VegetablesModel.fromJson(Map<String, dynamic> json) {
-    nameAr = json['nameAr'];
-    nameEn = json['nameEn'];
-    caloriesAr = json['caloriesAr'];
-    caloriesEn = json['caloriesEn'];
-    photo = json['photo'];
+    nameAr = json['nameAr'] ?? "";
+    nameEn = json['nameEn'] ?? "";
+    caloriesAr = json['caloriesAr'] ?? "";
+    caloriesEn = json['caloriesEn'] ?? "";
+    photo = json['photo'] ?? "";
   }
 }

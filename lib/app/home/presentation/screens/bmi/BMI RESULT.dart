@@ -24,23 +24,23 @@ class BmiResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kGreyColor,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.black,
-      //  leading: IconButton(
-      //    onPressed: (){
-      //      Navigator.pop(context);
-      //    },
-
-      //    icon:const Icon(Icons.keyboard_arrow_left),
-      //  ),
-      //   title: const Text(
-      //     'RESULT',
-      //     style: TextStyle(   fontFamily: CairoFont,
-      //       color: Colors.white,
-      //       fontWeight: FontWeight.bold,
-      //     ),
-      //   ),
-      // ),
+      appBar: AppBar(
+        backgroundColor: AppColors.kGreyColor,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.keyboard_arrow_left),
+        ),
+        // title: const Text(
+        //   'RESULT',
+        //   style: TextStyle(   fontFamily: CairoFont,
+        //     color: Colors.white,
+        //     fontWeight: FontWeight.bold,
+        //   ),
+        // ),
+      ),
       body: SafeArea(
         child: Center(
           child: Column(

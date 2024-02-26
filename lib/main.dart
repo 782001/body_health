@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => AppCubit()),
         BlocProvider(
             create: (context) => HomeCubit()
-              ..GetCaloriesData()
+              ..GetCaloriesData()..GetExercisesData()
               ..GetBodyVitaData()
               ..GetBodyEnergyWeightData()
               ..GetFoodSystemsListData()),

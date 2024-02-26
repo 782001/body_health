@@ -46,7 +46,7 @@ class DaysScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: context.height * .8,
+                height: context.height * .9,
                 width: double.infinity,
                 child: ListView.separated(
                     // scrollDirection: Axis.horizontal,
@@ -82,7 +82,7 @@ Widget DaysCard(DaysModel model, FoodSystemsModel customModel,
         borderRadius: BorderRadius.circular(15),
         child: Container(
           width: context.width * 1,
-          height: context.height * .2,
+          height: context.height * .28,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color: const Color(0xffD04641),

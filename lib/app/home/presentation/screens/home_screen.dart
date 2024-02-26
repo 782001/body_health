@@ -82,8 +82,19 @@ class HomeScreen extends StatelessWidget {
           return SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  height: context.height * 0.02,
+                // SizedBox(
+                //   height: context.height * 0.02,
+                // ),
+                Text(
+                  "Health Care",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: CairoFont,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue.shade900,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 // IconButton(
                 //     onPressed: () {
@@ -112,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                 // IconButton(
                 //     onPressed: () {
                 //       HomeCubit.get(context). uploadExerciseData(slimming: exersicesSlimmingDetailsList,
-                      
+
                 //         weight_stabilization: exersicesStablizationDetailsList,
                 //       );
                 //     },
@@ -148,8 +159,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                         itemBuilder: (BuildContext context, int index) {
                           int TouchIndex = HomeList[index].id;
-                          return HomeCard(
-                              HomeList[index], caloriesModel!,exercisesModel!, index, context);
+                          return HomeCard(HomeList[index], caloriesModel!,
+                              exercisesModel!, index, context);
                         },
                         itemCount: HomeList.length,
                         // itemCount: 3,
@@ -293,56 +304,47 @@ List<Map<String, dynamic>> exersicesSlimmingDetailsList = [
   {
     'nameAr': 'تمارين الحبل ',
     'nameEn': 'Rope Exercises ',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
   {
     'nameAr': ' الجري ',
     'nameEn': 'Running ',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
   {
     'nameAr': 'تدريب الأوزان  ',
     'nameEn': 'Weight Training ',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
   {
     'nameAr': 'ركوب الدراجات',
     'nameEn': 'Cycling ',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
- 
 ];
 List<Map<String, dynamic>> exersicesStablizationDetailsList = [
   {
     'nameAr': ' تمرين شد البطن ',
     'nameEn': 'Abdominal Stretching Exercise',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
   {
     'nameAr': ' تمرين عضلات الأرداف وتقوية الركبة ',
     'nameEn': 'Buttock Muscle Exercise and Knee Strengthening ',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
   {
     'nameAr': 'تمرين تمديد القدم',
     'nameEn': 'Foot Stretching Exercise',
-   
     'photo':
         'https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/Kiwi%2049%20calories%20%20%D9%83%D9%8A%D9%88%D9%8A%20%D9%A4%D9%A9%20%D8%B3%D8%B9%D8%B1%20%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A.jpg?alt=media&token=94139d5b-35a7-4fa8-8915-970b59cbcfa6',
   },
-  
 ];
 
 //  //  //  //  //  //  //  //
@@ -583,51 +585,53 @@ List<Map<String, dynamic>> gainWeightList = [
         "https://firebasestorage.googleapis.com/v0/b/body-health-5ac4e.appspot.com/o/potatoes%20%D8%A8%D8%B7%D8%A7%D8%B7%D8%B3.jpg?alt=media&token=e244c521-2cdc-4001-9e64-d1a691e85869"
   },
 ];
+
 List<Map<String, dynamic>> FoodSystemsList = [
   {
-    'Day1BreakfastEn': "bowl of poha or daliya vegetable",
-    'Day1BreakfastAr': "وعاء بوها او خضار يوميا",
-    'Day1LunchAr': "بوله صغيرة من الدال و بوله صغيرة من الجزر",
-    'Day1LunchEn': "small bowl of dal and small bowl of carrot",
-    'Day1DinnerEn': "chapatis and small bowl of palak paneer",
-    'Day1DinnerAr': "شاباتي و بةله صغيرة من بلاك بانير",
-    'Day2BreakfastEn': "dats parridge and fruits and skimmed milk",
-    'Day2BreakfastAr': "باردج داتس و فاكهه و حليب منزوع الدسم",
-    'Day2LunchAr':
-        "بوله صغيرة من ميثيدال و نص بوله ارز وبوله  صغيرة من الباميه",
+    'Day1BreakfastEn': "Two boiled eggs with two cucumbers",
+    'Day1BreakfastAr': "بيضتان مسلوقتان مع حبتي خيار",
+    'Day1LunchAr':
+        "قطعة دجاج مشوية أو مسلوقة بدون جلد مع ملعقة لبن ممزوجة ببذر الكتان",
+    'Day1LunchEn':
+        "A piece of grilled or boiled skinless chicken with a spoonful of milk mixed with flax seeds",
+    'Day1DinnerEn': " Two boiled eggs with a plate of vegetable salad",
+    'Day1DinnerAr': "بيضتان مسلوقتان مع طبق سلطة خضار",
+    'Day2BreakfastEn':
+        " Two boiled eggs with a slice of mortadella and a cucumber",
+    'Day2BreakfastAr': "بيضتان مسلوقتان مع شريحة مرتديلا وحبة خيار",
+    'Day2LunchAr': "علبة تونا  بدون زيت مغسولة بالماء مع الخل وحبتا كيوي",
     'Day2LunchEn':
-        "small bowl of okra  small bowl of methidal and 1/2 bowl rice and",
-    'Day2DinnerEn': "chapatis and small bowl of bottle gourd",
-    'Day2DinnerAr': "شاباتي و نص بوله من زجاجة القرع",
-    'Day3BreakfastEn': "2 brown rice idlis with sambhar and 1apple",
-    'Day3BreakfastAr': "2ايديليس ارز بني و 1 تفاجه",
-    'Day3LunchAr': "1 باجرا روتي و بوله سلطه خضرةوات",
-    'Day3LunchEn': "1 bajra roti and 1 bowl of vegetable salad",
-    'Day3DinnerEn':
-        "mixed vegetable salad topped with nuts and grilled low fat paneer",
-    'Day3DinnerAr':
-        "خليط من سلطه الخضروات ممزوجه  بالمكسرات و بانيه مشوي قليل الدسم ",
+        " A can of tuna in water without oil, washed in water with vinegar and two kiwis",
+    'Day2DinnerEn': " Add fat-free milk",
+    'Day2DinnerAr': "علبة لبن خال من الدسم",
+    'Day3BreakfastEn':
+        " Two boiled eggs with a slice of mortadella and a cucumber",
+    'Day3BreakfastAr': "بيضتان مسلوقتان مع شريحة مرتديلا وحبة خيار",
+    'Day3LunchAr': "قطعة لحم مشوية أو مسلوقة مع طبق سلطة خضار",
+    'Day3LunchEn':
+        " A piece of grilled or boiled meat with a vegetable salad plate",
+    'Day3DinnerEn': "A carton of fat-free milk",
+    'Day3DinnerAr': "علبة لبن خال من الدسم",
   },
   {
-    'Day1BreakfastEn': "ham and cheese and eggs and cranberry juice",
-    'Day1BreakfastAr': "لحم و جبنة و بيض وعصير توت",
-    'Day1LunchAr': "لحم مشوي و سلطة بطاطس و فاكهه و حليب صافي",
-    'Day1LunchEn': "barbeque chiken and potato salad and fruit and whole milk",
-    'Day1DinnerEn': "spaghetti  and garlic bread and fruit and whole milk",
-    'Day1DinnerAr': "سباجتي و خبز بالثوم و فاكهه و حليب صافي ",
-    'Day2BreakfastEn': "waffles and syrup and  yogurt  and whole milk",
-    'Day2BreakfastAr': "طير و شراب مركز و زبادي و حليب صافي",
-    'Day2LunchAr': "ساندويتش سلطة لحم و ادامامي و حليب صافي",
-    'Day2LunchEn': "ham salad sandwich and edamame and whole milk",
-    'Day2DinnerEn': "lasagna and roll and whole milk",
-    'Day2DinnerAr': "لازنيا و رول و حليب صافي",
-    'Day3BreakfastEn':
-        "scrambled eggs and one peace of toast and jelly and fruit juice",
-    'Day3BreakfastAr': "بيض مضروب و قطعة خبز محمص و جلس و عصسر فواكه",
-    'Day3LunchAr': "برجر الجبن وبطاطس مقلية و حليب الشوكلاتة",
-    'Day3LunchEn': "cheese burger and fries and chocolate milk shake",
-    'Day3DinnerEn': "salmon and rice and whole milk",
-    'Day3DinnerAr': "سالمون و ارز وحليب صافي",
+    'Day1BreakfastEn': "Carrot juice + Egg sandwich",
+    'Day1BreakfastAr': "عصير جزر + سندوتش بيض ",
+    'Day1LunchAr': "قطعة دجاج + سلطة + برتقالة",
+    'Day1LunchEn': " A piece of chicken + salad + orange",
+    'Day1DinnerEn': "Yogurt and a piece of bread",
+    'Day1DinnerAr': "زيادي + نصف قطعة خبز",
+    'Day2BreakfastEn': "Orange juice + Cheese sandwich",
+    'Day2BreakfastAr': "عصير برتقال + سندوتش جبن",
+    'Day2LunchAr': "قطعة سمك + نصف كوب معكرونة",
+    'Day2LunchEn': " A piece of fish + Half a cup of pasta",
+    'Day2DinnerEn': "Soft + half a piece of bread + apple",
+    'Day2DinnerAr': "لبنة + نصف قطعة خبر + تفاحة",
+    'Day3BreakfastEn': "Pineapple juice + Egg sandwich",
+    'Day3BreakfastAr': "عصير أناناس + سندوتش بيض ",
+    'Day3LunchAr': "قطعة لحم + سلطة + نصف كوب رز",
+    'Day3LunchEn': " A piece of meat + salad + Half a cup of rice",
+    'Day3DinnerEn': " Two gins + juice + Half a piece of bread",
+    'Day3DinnerAr': "حبتين جين + عصير + نصف قطعة خبز بر",
   },
   {
     'Day1BreakfastEn': "eggs and bacon and coffe",
@@ -650,6 +654,74 @@ List<Map<String, dynamic>> FoodSystemsList = [
     'Day3DinnerAr': "سلطة بصل بيضاء و ارز متكسر و زبادي",
   },
 ];
+
+// List<Map<String, dynamic>> FoodSystemsList = [
+//   {
+//     'Day1BreakfastEn': "bowl of poha or daliya vegetable",
+//     'Day1BreakfastAr': "وعاء بوها او خضار يوميا",
+//     'Day1LunchAr': "بوله صغيرة من الدال و بوله صغيرة من الجزر",
+//     'Day1LunchEn': "small bowl of dal and small bowl of carrot",
+//     'Day1DinnerEn': "chapatis and small bowl of palak paneer",
+//     'Day1DinnerAr': "شاباتي و بةله صغيرة من بلاك بانير",
+//     'Day2BreakfastEn': "dats parridge and fruits and skimmed milk",
+//     'Day2BreakfastAr': "باردج داتس و فاكهه و حليب منزوع الدسم",
+//     'Day2LunchAr':
+//         "بوله صغيرة من ميثيدال و نص بوله ارز وبوله  صغيرة من الباميه",
+//     'Day2LunchEn':
+//         "small bowl of okra  small bowl of methidal and 1/2 bowl rice and",
+//     'Day2DinnerEn': "chapatis and small bowl of bottle gourd",
+//     'Day2DinnerAr': "شاباتي و نص بوله من زجاجة القرع",
+//     'Day3BreakfastEn': "2 brown rice idlis with sambhar and 1apple",
+//     'Day3BreakfastAr': "2ايديليس ارز بني و 1 تفاجه",
+//     'Day3LunchAr': "1 باجرا روتي و بوله سلطه خضرةوات",
+//     'Day3LunchEn': "1 bajra roti and 1 bowl of vegetable salad",
+//     'Day3DinnerEn':
+//         "mixed vegetable salad topped with nuts and grilled low fat paneer",
+//     'Day3DinnerAr':
+//         "خليط من سلطه الخضروات ممزوجه  بالمكسرات و بانيه مشوي قليل الدسم ",
+//   },
+//   {
+//     'Day1BreakfastEn': "ham and cheese and eggs and cranberry juice",
+//     'Day1BreakfastAr': "لحم و جبنة و بيض وعصير توت",
+//     'Day1LunchAr': "لحم مشوي و سلطة بطاطس و فاكهه و حليب صافي",
+//     'Day1LunchEn': "barbeque chiken and potato salad and fruit and whole milk",
+//     'Day1DinnerEn': "spaghetti  and garlic bread and fruit and whole milk",
+//     'Day1DinnerAr': "سباجتي و خبز بالثوم و فاكهه و حليب صافي ",
+//     'Day2BreakfastEn': "waffles and syrup and  yogurt  and whole milk",
+//     'Day2BreakfastAr': "طير و شراب مركز و زبادي و حليب صافي",
+//     'Day2LunchAr': "ساندويتش سلطة لحم و ادامامي و حليب صافي",
+//     'Day2LunchEn': "ham salad sandwich and edamame and whole milk",
+//     'Day2DinnerEn': "lasagna and roll and whole milk",
+//     'Day2DinnerAr': "لازنيا و رول و حليب صافي",
+//     'Day3BreakfastEn':
+//         "scrambled eggs and one peace of toast and jelly and fruit juice",
+//     'Day3BreakfastAr': "بيض مضروب و قطعة خبز محمص و جلس و عصسر فواكه",
+//     'Day3LunchAr': "برجر الجبن وبطاطس مقلية و حليب الشوكلاتة",
+//     'Day3LunchEn': "cheese burger and fries and chocolate milk shake",
+//     'Day3DinnerEn': "salmon and rice and whole milk",
+//     'Day3DinnerAr': "سالمون و ارز وحليب صافي",
+//   },
+//   {
+//     'Day1BreakfastEn': "eggs and bacon and coffe",
+//     'Day1BreakfastAr': "بيض ولحم مشوي و قهوه",
+//     'Day1LunchAr': "فراخ و فاصوليا بيضاء وتفاح",
+//     'Day1LunchEn': "chicken and white bean soup and apple",
+//     'Day1DinnerEn': "cup of brown rice cocked and yogurt ",
+//     'Day1DinnerAr': " ارز بني مطبوخ و زبادي",
+//     'Day2BreakfastEn': " cereal and muesli and fresh fruits   ",
+//     'Day2BreakfastAr': "رقائق الزرة و موسلي و فاكهه طازجة",
+//     'Day2LunchAr': " دجاج كاري مطبوخ ببطئ و برتقاله متوسطة",
+//     'Day2LunchEn': "slow cooker chicken curry and medium orange",
+//     'Day2DinnerEn': "grilled salmon and halloumi cheese and yogurt",
+//     'Day2DinnerAr': "سلمون مشوي وجبنة حلومي وزبادي",
+//     'Day3BreakfastEn': "toast with cheese and fresh tomato and lettuce",
+//     'Day3BreakfastAr': "خبز محمص بالجبنة و طماطم طازجة و خس",
+//     'Day3LunchAr': "مكرونة التونة المخبوزة و جبنة البارميزان",
+//     'Day3LunchEn': "baked tuna pasta and parmesan cheese",
+//     'Day3DinnerEn': "white salad onion and rice cracker and yogurt",
+//     'Day3DinnerAr': "سلطة بصل بيضاء و ارز متكسر و زبادي",
+//   },
+// ];
 
 
 // InkWell my_home_items(BuildContext context) {
